@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <script data-mi-early-theme>
+    (function(){
+      // sync language early (prevents direction/theme mismatch flashes)
+      try{
+        var l = localStorage.getItem('mind-islands-lang');
+        if(l === 'en'){
+          document.documentElement.setAttribute('lang','en');
+          document.documentElement.setAttribute('dir','ltr');
+        }else if(l === 'fa'){
+          document.documentElement.setAttribute('lang','fa');
+          document.documentElement.setAttribute('dir','rtl');
+        }
+      }catch(e){}
+
+      // sync theme early
+      try{
+        var t = localStorage.getItem('mind-islands-theme') || localStorage.getItem('mi_theme') || 'dark';
+        if(t !== 'light' && t !== 'dark') t = 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      }catch(e){}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070b14">
+  <title>مدل حل مسئله (Problem-Solving Model) | جزیره‌های ذهن</title>
+  <link rel="icon" href="../../favicon.svg">
+  <link rel="stylesheet" href="../../combiners/_assets/combiner-ui.css">
+  <style>
+    body{--accent-h:239;}
+  </style>
+</head>
+<body data-page="examples">
+  <div class="tp-progress"><div class="tp-progress__bar"></div></div>
+  <header class="co-hero">
+    <div class="co-wrap">
+      <div class="co-topbar">
+        <div>
+          <div class="co-breadcrumbs"><a class="tp-link" href="../../index.html">خانه</a><span>›</span><a class="tp-link" href="../index.html">ترکیب‌گران</a><span>›</span><span>مدل حل مسئله</span></div>
+          <h1 class="co-h1">مدل حل مسئله (Problem-Solving Model)</h1>
+          <p class="co-lead">سناریوهای واقعی برای تمرین این مدل</p>
+          <div class="co-ctaRow">
+            <span class="co-chip"><span>🔧</span><span>مدل حل مسئله</span></span><span class="co-chip">⏱️ ۲۰ تا ۶۰ دقیقه (برای تحلیل و رفع مسئله)</span>
+          </div>
+        </div>
+        <div class="co-actions">
+          <button class="tp-iconBtn" data-copy-link title="کپی لینک">🔗</button>
+          <button class="tp-iconBtn" data-theme-toggle title="تم">🌙</button>
+          <button class="tp-iconBtn tp-iconBtn--lang" data-mi-langbtn="1" title="English" aria-label="English">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="co-wrap" style="padding:1.2rem 1rem 0">
+    <div class="co-grid">
+      <aside class="co-side">
+        <div class="co-card">
+          <div class="co-small" style="margin-bottom:.6rem">ناوبری مدل</div>
+          <nav class="co-nav" data-subnav>
+            <a href="./index.html" data-page="index">نمای کلی<span class="co-badge2">index</span></a><a href="./workflow.html" data-page="workflow">گام‌ها و جریان<span class="co-badge2">workflow</span></a><a href="./examples.html" data-page="examples">سناریوها<span class="co-badge2">examples</span></a><a href="./templates.html" data-page="templates">قالب‌ها<span class="co-badge2">templates</span></a><a href="./faq.html" data-page="faq">اشتباهات و FAQ<span class="co-badge2">faq</span></a><a href="./related.html" data-page="related">مدل‌های مرتبط<span class="co-badge2">related</span></a>
+          </nav>
+          <div style="margin-top:1rem" class="co-small">می‌خوای برگردی داخل اپ؟ <a class="tp-link" href="../../index.html">صفحه اصلی</a></div>
+        </div>
+      </aside>
+      <div class="co-main">
+
+      <div class="co-card">
+        <div class="co-section">
+          <h2>سناریوهای تمرینی</h2>
+          <p>این صفحه برای جا انداختن مدل است. هر سناریو را با زمان محدود انجام بده و خروجی‌ها را ثبت کن.</p>
+        </div>
+        <div class="co-section">
+          <h2>سناریوها</h2>
+          <div class="co-steps">
+      <div class="co-step">
+        <div class="co-step__head">
+          <div class="co-step__badge" style="background:#6366f122;border-color:#6366f155">🧷</div>
+          <div>
+            <div class="co-step__title">سناریو ۱: نمونه اصلی</div>
+            <div class="co-small">مثال پایه‌ی این مدل.</div>
+          </div>
+        </div>
+        <div class="co-surface"><div class="co-template">مثال (رفع باگ):<br>تحلیل: دقیقاً کِی و کجا رخ می‌ده؟ لاگ‌ها چی می‌گن؟<br>سیستمی: این بخش به چی وصل است؟ چه وابستگی‌هایی تغییر کرده؟<br>انتقادی: اگر این fix را بزنیم، چه چیز دیگری می‌شکنه؟ چه فرضی داریم؟<br><br>خروجی: یک fix مرحله‌ای + مانیتورینگ بعد از انتشار.</div></div>
+      </div>
+    
+      <div class="co-step">
+        <div class="co-step__head">
+          <div class="co-step__badge" style="background:#6366f122;border-color:#6366f155">2</div>
+          <div>
+            <div class="co-step__title">سناریو 2: باگ پیچیده</div>
+            <div class="co-small">خطا فقط در بعضی شرایط رخ می‌دهد.</div>
+          </div>
+        </div>
+        <ul class="co-bullets"><li>تحلیلی: بازتولید، لاگ‌ها، داده.</li><li>سیستمی: وابستگی‌ها، تغییرات اخیر.</li><li>انتقادی: فرض‌ها، ریسک fix.</li><li>خروجی: fix مرحله‌ای + مانیتورینگ.</li></ul>
+        <div class="co-surface"><div class="co-template">خروجی نهایی:
+- تصمیم/راهکار: ...
+- دلیل: ...
+- قدم بعدی: ...
+- معیار بازنگری: ...</div></div>
+      </div>
+
+      <div class="co-step">
+        <div class="co-step__head">
+          <div class="co-step__badge" style="background:#6366f122;border-color:#6366f155">3</div>
+          <div>
+            <div class="co-step__title">سناریو 3: افت فروش/تعامل</div>
+            <div class="co-small">یک KPI افت کرده و علت معلوم نیست.</div>
+          </div>
+        </div>
+        <ul class="co-bullets"><li>تحلیلی: شکستن KPI به اجزا.</li><li>سیستمی: کانال‌ها و حلقه‌های اثر.</li><li>انتقادی: رد کردن توضیح‌های ساده و تست فرض‌ها.</li><li>خروجی: ۳ فرضیه + ۳ تست سریع + برنامه اقدام.</li></ul>
+        <div class="co-surface"><div class="co-template">خروجی نهایی:
+- تصمیم/راهکار: ...
+- دلیل: ...
+- قدم بعدی: ...
+- معیار بازنگری: ...</div></div>
+      </div>
+</div>
+        </div>
+        <div class="co-section">
+          <h2>تمرین ۷ روزه</h2>
+          <ul class="co-bullets">
+            <li>روز ۱: یک تصمیم کوچک با همین مدل.</li>
+            <li>روز ۲: همان تصمیم را با مدل سریع‌تر مقایسه کن.</li>
+            <li>روز ۳: یک سناریوی کاری.</li>
+            <li>روز ۴: یک سناریوی شخصی.</li>
+            <li>روز ۵: ۳ خط درس‌آموخته.</li>
+            <li>روز ۶: قالب شخصی‌ات را بنویس.</li>
+            <li>روز ۷: ساده‌سازی مدل برای خودت.</li>
+          </ul>
+        </div>
+      </div>
+    
+      </div>
+    </div>
+  </main>
+  <footer class="co-footer">
+    <div>© جزیره‌های ذهن. نسخه لوکال.</div>
+    <div class="co-small">این صفحه‌ها برای مطالعه و استفاده عملی طراحی شده‌اند.</div>
+  </footer>
+  <script src="../../combiners/_assets/combiner-page.js"></script>
+  <script src="../combiner-enhance.js" defer></script>
+</body>
+</html>

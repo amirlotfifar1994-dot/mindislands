@@ -1,0 +1,301 @@
+<html lang="fa" dir="rtl" data-theme="dark" style="--accent-h:210">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script data-mi-early="1">
+  (function(){
+    try{
+      var root=document.documentElement;
+      var theme=localStorage.getItem('mind-islands-theme');
+      if(theme==='light'||theme==='dark') root.setAttribute('data-theme', theme);
+      var lang=localStorage.getItem('mind-islands-lang');
+      if(lang==='en'){ root.lang='en'; root.dir='ltr'; root.setAttribute('data-lang','en'); }
+      else { root.lang='fa'; root.dir='rtl'; root.setAttribute('data-lang','fa'); }
+      var meta=document.querySelector('meta[name="theme-color"]');
+      if(meta){ meta.setAttribute('content', (root.getAttribute('data-theme')==='light') ? '#fbfaf8' : '#070b14'); }
+    }catch(e){}
+  })();
+  </script>
+  <meta name="theme-color" content="#070b14">
+  <title>جزیره | Mind Islands</title>
+  <link rel="icon" href="../../favicon.svg">
+  <link rel="stylesheet" href="../../traps/trap-ui.css">
+  <link rel="stylesheet" href="../_assets/island-ui.css">
+</head>
+<body data-island-id="analytical">
+  <div class="tp-hero">
+    <div class="tp-hero__inner">
+      <nav class="tp-nav">
+        <a class="tp-btn" href="../../index.html">🏝️ اپ</a>
+        <a class="tp-btn" href="../index.html">🏝️ جزیره‌ها</a>
+        <a class="tp-btn" href="../../traps/index.html">🧠 تله‌ها</a>
+        <a class="tp-btn" href="../../combiners/index.html">🧩 مدل‌های ترکیبی</a>
+        <button class="tp-btn" type="button" data-theme-toggle="1" aria-label="تغییر تم">🌙</button>
+        <button class="tp-btn" type="button" data-mi-langbtn="1">EN</button>
+      </nav>
+
+      <h1 class="tp-h1" data-island-title>جزیره</h1>
+      <p class="tp-lead" data-island-lead>...</p>
+
+      <div class="tp-meta">
+        <span class="tp-badge">id: analytical</span>
+        <span class="tp-badge" data-mi-lang="fa">مرحله ۲: محتوای واقعی (تحلیلی)</span>
+        <span class="tp-badge" data-mi-lang="en" hidden>Stage 2: real content (Analytical)</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="ip-main">
+    <section class="ip-card mi-reveal" id="overview">
+      <h2 data-mi-lang="fa">تعریف و کاربرد</h2>
+      <h2 data-mi-lang="en" hidden>Definition &amp; Use</h2>
+
+      <p data-mi-lang="fa">
+        تفکر تحلیلی یعنی تبدیل «فاجعه‌ی مبهم» به «مسئله‌ی قابل بررسی»؛
+        بدون سرزنش، بدون حکم قطعی.
+      </p>
+      <p data-mi-lang="en" hidden>
+        Analytical thinking turns a vague “disaster” into a testable problem: describe, hypothesize, collect evidence, then act.
+      </p>
+
+      <ul class="ip-list" data-mi-lang="fa">
+        <li>شرح دقیق مسئله (بدون برچسب و قضاوت)</li>
+        <li>ساختن چند فرضیه‌ی رقیب (نه یک مقصر/یک روایت)</li>
+        <li>چیدن شواهد: موافق / مخالف / نامشخص</li>
+        <li>جمع‌بندی موقت + یک اقدام کوچک واقعی</li>
+      </ul>
+
+      <ul class="ip-list" data-mi-lang="en" hidden>
+        <li>Describe (no blame)</li>
+        <li>Generate multiple competing hypotheses</li>
+        <li>Evidence: for / against / unknown</li>
+        <li>Provisional conclusion + a small real action</li>
+      </ul>
+
+      <details class="ip-details" data-mi-lang="fa">
+        <summary>چه وقت به درد می‌خورد؟</summary>
+        <ul class="ip-list">
+          <li>وقتی ذهن «روایت سریع» می‌سازد و تو همان را حقیقت می‌گیری.</li>
+          <li>وقتی باید تصمیم بگیری ولی داده‌ات کم/نامنظم است.</li>
+          <li>وقتی با برچسب‌هایی مثل «من خرابم» یا «همه چیز تمام شد» گیر کرده‌ای.</li>
+        </ul>
+      </details>
+
+      <details class="ip-details" data-mi-lang="en" hidden>
+        <summary>When to use</summary>
+        <ul class="ip-list">
+          <li>When your mind jumps to a fast story and calls it “truth”.</li>
+          <li>When you need a decision but your evidence is messy or scarce.</li>
+          <li>When labels (“I’m broken”) replace observable facts.</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="ip-card mi-reveal" id="framework">
+      <h2 data-mi-lang="fa">چارچوب ۴ مرحله‌ای (قلب جزیره)</h2>
+      <h2 data-mi-lang="en" hidden>The 4-step frame</h2>
+
+      <p data-mi-lang="fa">این چهار مرحله را مثل یک «اسکریپت» همیشه همراه داشته باش.</p>
+      <p data-mi-lang="en" hidden>Keep this as a reusable script you can run on any situation.</p>
+
+      <div class="ip-acc">
+        <details class="ip-details" open>
+          <summary><span data-mi-lang="fa">۱) شرح مسئله (بدون قضاوت)</span><span data-mi-lang="en" hidden>1) Describe (no judgment)</span></summary>
+          <p data-mi-lang="fa">چه اتفاقی افتاد؟ کی؟ کجا؟ چه چیزی عوض شد و چه چیزهایی ثابت ماند؟ فقط «مشاهده».</p>
+          <p data-mi-lang="en" hidden>What happened, when, what changed, what stayed constant. Stick to observations.</p>
+        </details>
+
+        <details class="ip-details">
+          <summary><span data-mi-lang="fa">۲) چند فرضیه‌ی رقیب</span><span data-mi-lang="en" hidden>2) Competing hypotheses</span></summary>
+          <p data-mi-lang="fa">حداقل ۳ توضیح بساز. حتی اگر یکی خیلی وسوسه‌انگیز است، دو تای دیگر را «عمداً» اضافه کن.</p>
+          <p data-mi-lang="en" hidden>Write at least 3 explanations. Force yourself to add alternatives.</p>
+        </details>
+
+        <details class="ip-details">
+          <summary><span data-mi-lang="fa">۳) شواهد: موافق / مخالف / نامشخص</span><span data-mi-lang="en" hidden>3) Evidence</span></summary>
+          <p data-mi-lang="fa">برای هر فرضیه سه سؤال ثابت: چه چیزی به نفعش است؟ چه چیزی علیه‌اش است؟ چه چیزی را هنوز نمی‌دانم؟</p>
+          <p data-mi-lang="en" hidden>For each hypothesis: evidence for, evidence against, and what’s still unknown.</p>
+        </details>
+
+        <details class="ip-details" id="checklist">
+          <summary><span data-mi-lang="fa">۴) جمع‌بندی موقت + اقدام کوچک</span><span data-mi-lang="en" hidden>4) Provisional conclusion + micro-action</span></summary>
+          <p data-mi-lang="fa">نتیجه «موقت» است. خروجی باید یک اقدام کوچک باشد: یک تست، یک مکث، یک داده‌ی جدید، یک اصلاح محدود.</p>
+          <p data-mi-lang="en" hidden>Your conclusion stays provisional. Output must include a small action: test, pause, gather data, or a limited change.</p>
+        </details>
+      </div>
+
+      <details class="ip-details" data-mi-lang="fa">
+        <summary>ابزار اضافه: تکنیک «۵ چرا»</summary>
+        <p>برای رفتن از «علت سطحی» به «ریشه‌ی محتمل»، ۵ بار پشت‌سرهم بپرس «چرا؟» و جواب‌ها را کوتاه و واقعی بنویس.</p>
+        <ul class="ip-list">
+          <li>اگر در مرحله ۳ گیر کردی، ۵ چرا به ساخت فرضیه‌های بهتر کمک می‌کند.</li>
+          <li>اگر جواب‌ها رفت سمت سرزنش، برگرد به «مشاهده» و دوباره بپرس.</li>
+        </ul>
+      </details>
+
+      <details class="ip-details" data-mi-lang="en" hidden>
+        <summary>Extra tool: “5 Whys”</summary>
+        <p>Ask “why?” repeatedly to move from surface causes to likely roots. Keep answers concrete and observable.</p>
+      </details>
+    </section>
+
+    <section class="ip-card mi-reveal" id="exercises">
+      <h2 data-mi-lang="fa">تمرین‌های سریع (کارت‌محور)</h2>
+      <h2 data-mi-lang="en" hidden>Quick exercises (card-based)</h2>
+
+      <div class="ip-cards">
+        <details class="ip-details">
+          <summary><span data-mi-lang="fa">تمرین ۱ (۱۰–۱۵ دقیقه): مسئله کوچک روزمره</span><span data-mi-lang="en" hidden>Exercise 1 (10–15 min): a small issue</span></summary>
+          <ul class="ip-list" data-mi-lang="fa">
+            <li>شرح مسئله را ۳ تا ۶ خط، بدون قضاوت بنویس.</li>
+            <li>حداقل ۳ فرضیه بساز.</li>
+            <li>برای هر فرضیه یک شاهد موافق و یک شاهد مخالف/نامشخص بنویس.</li>
+            <li>در پایان: «قوی‌ترین فرضیه فعلی» + «کوچک‌ترین اقدام عملی».</li>
+          </ul>
+          <ul class="ip-list" data-mi-lang="en" hidden>
+            <li>Write a 3–6 line neutral description.</li>
+            <li>Generate 3 hypotheses.</li>
+            <li>For each: one piece of evidence for and one against/unknown.</li>
+            <li>Pick a provisional best hypothesis + one micro-action.</li>
+          </ul>
+        </details>
+
+        <details class="ip-details">
+          <summary><span data-mi-lang="fa">تمرین ۲ (۲۰–۳۰ دقیقه در هفته): مسئله جدی‌تر</span><span data-mi-lang="en" hidden>Exercise 2 (20–30 min): a bigger issue</span></summary>
+          <p data-mi-lang="fa">یک موضوع مهم‌تر انتخاب کن (مثلاً افت انگیزه، تردید درباره یک پروژه، یا سردی رابطه) و چارچوب ۴گانه را کامل اجرا کن.</p>
+          <p data-mi-lang="en" hidden>Pick a more important topic and run the full 4-step frame end-to-end.</p>
+        </details>
+
+        <details class="ip-details">
+          <summary><span data-mi-lang="fa">تمرین ۳ (برای کنجکاوها): تبدیل «برچسب» به «واقعیت قابل مشاهده»</span><span data-mi-lang="en" hidden>Exercise 3: turn labels into observable facts</span></summary>
+          <ul class="ip-list" data-mi-lang="fa">
+            <li>یک برچسب قدیمی بردار: «من همیشه خراب می‌کنم»، «من ذاتاً ضعیفم»، ...</li>
+            <li>آن را تبدیل کن به یک جمله دقیق و قابل مشاهده (با زمان/موقعیت مشخص).</li>
+            <li>چند فرضیه فراتر از «من بد هستم» بنویس و شواهد موافق/مخالف جمع کن.</li>
+          </ul>
+          <ul class="ip-list" data-mi-lang="en" hidden>
+            <li>Pick an old label (“I always fail”).</li>
+            <li>Rewrite it as an observable statement with context.</li>
+            <li>Generate hypotheses beyond self-blame and test with evidence.</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <aside class="ip-card mi-reveal" id="traps">
+      <h2 data-mi-lang="fa">تله‌ها (داخل همین جزیره)</h2>
+      <h2 data-mi-lang="en" hidden>Traps (inside this island)</h2>
+
+      <p data-mi-lang="fa">دو دسته را جدا نگه دار: «تله‌های سبک» (وقتی تحلیلی فکر می‌کنی گیر می‌کنی) و «تله‌های شناختی CBT» (تحریف‌های رایج).</p>
+      <p data-mi-lang="en" hidden>Two layers: island-style traps (how analytical thinking gets blocked) and CBT cognitive distortions (common mental shortcuts).</p>
+
+      <details class="ip-details" open>
+        <summary><span data-mi-lang="fa">تله‌های سبکِ جزیره تحلیلی</span><span data-mi-lang="en" hidden>Island-style traps</span></summary>
+
+        <div class="ip-chips" style="margin:.5rem 0 .8rem">
+          <a class="tp-chip" href="../../traps/anchoring.html" data-mi-lang="fa">چسبیدن به اولین توضیح</a>
+          <a class="tp-chip" href="../../traps/anchoring.html" data-mi-lang="en" hidden>Anchoring</a>
+
+          <a class="tp-chip" href="../../traps/confirmation_bias.html" data-mi-lang="fa">دیدن فقط شواهد تأییدکننده</a>
+          <a class="tp-chip" href="../../traps/confirmation_bias.html" data-mi-lang="en" hidden>Confirmation Bias</a>
+
+          <a class="tp-chip" href="../../traps/complexity_bias.html" data-mi-lang="fa">جزئیات زیاد و قفل شدن</a>
+          <a class="tp-chip" href="../../traps/complexity_bias.html" data-mi-lang="en" hidden>Complexity Bias</a>
+        </div>
+
+        <ul class="ip-list" data-mi-lang="fa">
+          <li>
+<b>اولین روایت</b>: وقتی اولین توضیح را «حکم» می‌کنی. ضدتله: «دو توضیح دیگر هم می‌تواند درست باشد؟»</li>
+          <li>
+<b>اضافه‌بار اطلاعات</b>: معیارها را ۲–۳ تا کن و بقیه را نویز بدان.</li>
+          <li>
+<b>فشار زمانی مصنوعی</b>: قانون «۱۰ دقیقه اول تصمیم مهم نمی‌گیرم».</li>
+          <li>
+<b>هیجان شدید</b>: قبل از تحلیل، شدت هیجان را پایین بیاور (نفس، آب، قدم، نوشتن خام احساس).</li>
+        </ul>
+
+        <ul class="ip-list" data-mi-lang="en" hidden>
+          <li>
+<b>First story</b>: treat the first explanation as a verdict. Antidote: “What are two other plausible explanations?”</li>
+          <li>
+<b>Info overload</b>: reduce to 2–3 criteria; ignore the rest as noise.</li>
+          <li>
+<b>Fake urgency</b>: “No major decisions in the first 10 minutes.”</li>
+          <li>
+<b>High emotion</b>: regulate first, then analyze.</li>
+        </ul>
+      </details>
+
+      <details class="ip-details">
+        <summary><span data-mi-lang="fa">تله‌های شناختی (CBT) مرتبط</span><span data-mi-lang="en" hidden>Related cognitive distortions (CBT)</span></summary>
+
+        <div class="ip-chips" style="margin:.5rem 0 .8rem">
+          <a class="tp-chip" href="../../traps/all_or_nothing.html" data-mi-lang="fa">همه یا هیچ</a>
+          <a class="tp-chip" href="../../traps/all_or_nothing.html" data-mi-lang="en" hidden>All-or-Nothing</a>
+
+          <a class="tp-chip" href="../../traps/perfectionism.html" data-mi-lang="fa">کمال‌گرایی فلج‌کننده</a>
+          <a class="tp-chip" href="../../traps/perfectionism.html" data-mi-lang="en" hidden>Perfectionism</a>
+
+          <a class="tp-chip" href="../../traps/analysis_paralysis.html" data-mi-lang="fa">فلج تحلیل</a>
+          <a class="tp-chip" href="../../traps/analysis_paralysis.html" data-mi-lang="en" hidden>Analysis Paralysis</a>
+        </div>
+
+        <ul class="ip-list" data-mi-lang="fa">
+          <li>
+<b>همه یا هیچ</b>: «راه سوم/چهارم چیست؟»</li>
+          <li>
+<b>کمال‌گرایی</b>: «حداقل نسخه قابل قبول (MVP) برای امروز چیست؟»</li>
+          <li>
+<b>فلج تحلیل</b>: «کدام اقدام ۷ روزه می‌تواند یک داده واقعی بسازد؟»</li>
+          <li>
+<b>برچسب‌زنی هویتی</b>: «رفتار را توصیف کن، نه هویت را.»</li>
+          <li>
+<b>باید/نباید</b>: «این یک ترجیح است یا قانون آهنین؟ اگر نقض شود دقیقاً چه می‌شود؟»</li>
+        </ul>
+
+        <ul class="ip-list" data-mi-lang="en" hidden>
+          <li>
+<b>All-or-nothing</b>: “What’s the third option?”</li>
+          <li>
+<b>Perfectionism</b>: “What’s the minimum acceptable version for today?”</li>
+          <li>
+<b>Analysis paralysis</b>: “What 7-day action creates real data?”</li>
+          <li>
+<b>Labeling</b>: describe behavior, not identity.</li>
+          <li>
+<b>Should statements</b>: preference vs iron rule. What actually happens if it’s broken?</li>
+        </ul>
+      </details>
+
+      <details class="ip-details" open>
+        <summary><span data-mi-lang="fa">چک‌لیست ۳۰ ثانیه‌ای</span><span data-mi-lang="en" hidden>30-second checklist</span></summary>
+
+        <ul class="ip-list" data-mi-lang="fa">
+          <li>مسئله را بدون قضاوت نوشتم.</li>
+          <li>حداقل ۳ فرضیه ساختم.</li>
+          <li>برای هر فرضیه شاهد موافق و مخالف/نامشخص دارم.</li>
+          <li>یک اقدام کوچک و مشخص تعریف کردم.</li>
+          <li>نتیجه را بعد از اقدام، به‌روزرسانی می‌کنم.</li>
+        </ul>
+
+        <ul class="ip-list" data-mi-lang="en" hidden>
+          <li>Neutral description</li>
+          <li>3 hypotheses</li>
+          <li>Evidence for/against/unknown</li>
+          <li>One micro-action</li>
+          <li>Update after acting</li>
+        </ul>
+      </details>
+
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.9rem">
+        <a class="tp-btn tp-btn--solid" href="../../combiners/problem/index.html" data-mi-lang="fa">مدل حل مسئله</a>
+        <a class="tp-btn tp-btn--solid" href="../../combiners/problem/index.html" data-mi-lang="en" hidden>Problem-solving model</a>
+        <a class="tp-btn" href="../../traps/index.html" data-mi-lang="fa">فهرست تله‌ها</a>
+        <a class="tp-btn" href="../../traps/index.html" data-mi-lang="en" hidden>Trap library</a>
+      </div>
+    </aside>
+  </main>
+
+  <script defer src="../_assets/island-page.js"></script>
+</body>
+</html>

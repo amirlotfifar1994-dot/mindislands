@@ -1,0 +1,85 @@
+<html lang="fa" dir="rtl" data-theme="dark" style="--accent-h:210">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script data-mi-early="1">
+  (function(){
+    try{
+      var root=document.documentElement;
+      var theme=localStorage.getItem('mind-islands-theme');
+      if(theme==='light'||theme==='dark') root.setAttribute('data-theme', theme);
+      var lang=localStorage.getItem('mind-islands-lang');
+      if(lang==='en'){ root.lang='en'; root.dir='ltr'; root.setAttribute('data-lang','en'); }
+      else { root.lang='fa'; root.dir='rtl'; root.setAttribute('data-lang','fa'); }
+      var meta=document.querySelector('meta[name="theme-color"]');
+      if(meta){ meta.setAttribute('content', (root.getAttribute('data-theme')==='light') ? '#fbfaf8' : '#070b14'); }
+    }catch(e){}
+  })();
+  </script>
+  <meta name="theme-color" content="#070b14">
+  <title>جزیره | Mind Islands</title>
+  <link rel="icon" href="../../favicon.svg">
+  <link rel="stylesheet" href="../../traps/trap-ui.css">
+  <link rel="stylesheet" href="../_assets/island-ui.css">
+</head>
+<body data-island-id="strategic">
+  <div class="tp-hero">
+    <div class="tp-hero__inner">
+      <nav class="tp-nav">
+        <a class="tp-btn" href="../../index.html">🏝️ اپ</a>
+        <a class="tp-btn" href="../index.html">🏝️ جزیره‌ها</a>
+        <a class="tp-btn" href="../../traps/index.html">🧠 تله‌ها</a>
+        <a class="tp-btn" href="../../combiners/index.html">🧩 مدل‌های ترکیبی</a>
+        <button class="tp-btn" type="button" data-theme-toggle="1" aria-label="تغییر تم">🌙</button>
+        <button class="tp-btn" type="button" data-mi-langbtn="1">EN</button>
+      </nav>
+
+      <h1 class="tp-h1" data-island-title>جزیره</h1>
+      <p class="tp-lead" data-island-lead>...</p>
+
+      <div class="tp-meta">
+        <span class="tp-badge">id: strategic</span>
+        <span class="tp-badge" data-mi-lang="fa">مرحله ۱: اسکلت صفحه</span>
+        <span class="tp-badge" data-mi-lang="en" hidden>Stage 1: page skeleton</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="ip-main">
+    <section class="ip-card mi-reveal" id="overview">
+      <h2 data-mi-lang="fa">تعریف و کاربرد</h2>
+      <h2 data-mi-lang="en" hidden>Definition &amp; When to use</h2>
+      <p data-mi-lang="fa">این بخش در مرحله بعد کامل می‌شود: تعریف دقیق، چه زمانی این لنز مفید است، و چه زمانی نباید زیاده‌روی کرد.</p>
+      <p data-mi-lang="en" hidden>This section will be completed next: clear definition, when this lens helps, and when it becomes a trap.</p>
+    </section>
+
+    <section class="ip-card mi-reveal" id="exercises">
+      <h2 data-mi-lang="fa">تمرین‌ها و ابزارها</h2>
+      <h2 data-mi-lang="en" hidden>Exercises &amp; Tools</h2>
+      <p data-mi-lang="fa">در مرحله بعد، تمرین‌های کارت‌محور (با Show details) اضافه می‌شود تا سریع قابل اجرا باشند.</p>
+      <p data-mi-lang="en" hidden>Next stage adds card-based exercises with a single Show details button per card.</p>
+    </section>
+
+    <section class="ip-card mi-reveal" id="traps">
+      <h2 data-mi-lang="fa">تله‌های مرتبط</h2>
+      <h2 data-mi-lang="en" hidden>Related traps</h2>
+      <p data-mi-lang="fa">در مرحله بعد، لیست کامل تله‌های مرتبط این جزیره ساخته می‌شود و هر آیتم لینک مستقیم به صفحه همان تله دارد.</p>
+      <p data-mi-lang="en" hidden>Next stage: a complete list of related traps with direct links to each trap page.</p>
+    </section>
+
+    <aside class="ip-card mi-reveal" id="combiners">
+      <h2 data-mi-lang="fa">مدل‌های ترکیبی مرتبط</h2>
+      <h2 data-mi-lang="en" hidden>Related combiner models</h2>
+      <p data-mi-lang="fa">در مرحله بعد، مدل‌های ترکیبی مرتبط با این جزیره (dual/triple/...) لینک می‌شوند و توضیح کوتاه می‌گیرند.</p>
+      <p data-mi-lang="en" hidden>Next stage: link to relevant combiner models (dual/triple/...) with short notes.</p>
+
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.9rem">
+        <a class="tp-btn tp-btn--solid" href="../../combiners/index.html" data-mi-lang="fa">رفتن به مدل‌های ترکیبی</a>
+        <a class="tp-btn tp-btn--solid" href="../../combiners/index.html" data-mi-lang="en" hidden>Go to combiners</a>
+      </div>
+    </aside>
+  </main>
+
+  <script defer src="../_assets/island-page.js"></script>
+</body>
+</html>

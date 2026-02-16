@@ -1,0 +1,25 @@
+/* Trap pages add-on (kept tiny on purpose) */
+.mi-topbar{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(7,11,20,.6);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08);}
+[data-theme="light"] .mi-topbar{background:rgba(251,250,248,.72);}
+.mi-topbar__inner{max-width:72rem;margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;}
+.mi-pill{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .8rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:rgba(255,255,255,.86);font-size:.9rem;line-height:1;}
+[data-theme="light"] .mi-pill{border-color:rgba(0,0,0,.10);background:rgba(0,0,0,.04);color:rgba(0,0,0,.75);}
+.mi-pill:hover{background:rgba(255,255,255,.10);}
+.mi-actions{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;}
+.mi-page{min-height:100vh;padding:6.5rem 1rem 4rem;}
+.mi-wrap{max-width:64rem;margin:0 auto;}
+.mi-title{font-weight:800;letter-spacing:-.2px;}
+.mi-kv{display:grid;gap:1rem;margin-top:1.25rem;}
+@media(min-width:768px){.mi-kv{grid-template-columns:1.2fr .8fr;}}
+.mi-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.10);border-radius:20px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.25);}
+[data-theme="light"] .mi-card{background:rgba(0,0,0,.03);border-color:rgba(0,0,0,.10);box-shadow:0 10px 30px rgba(0,0,0,.08);}
+.mi-section{margin-top:1rem;}
+.mi-section h2{font-weight:800;font-size:1.05rem;margin-bottom:.6rem;color:rgba(255,255,255,.92);}
+[data-theme="light"] .mi-section h2{color:rgba(0,0,0,.82);}
+.mi-muted{color:rgba(255,255,255,.65);}
+[data-theme="light"] .mi-muted{color:rgba(0,0,0,.62);}
+.mi-list{margin:0;padding:0 1.2rem;}
+.mi-list li{margin:.45rem 0;line-height:1.8;}
+.mi-badges{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem;}
+.mi-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.25rem .6rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);color:rgba(255,255,255,.75);font-size:.78rem;}
+[data-theme="light"] .mi-badge{border-color:rgba(0,0,0,.12);background:rgba(0,0,0,.04);color:rgba(0,0,0,.62);}

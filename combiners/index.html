@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <script data-mi-early-theme>
+    (function(){
+      // sync language early (prevents direction/theme mismatch flashes)
+      try{
+        var l = localStorage.getItem('mind-islands-lang');
+        if(l === 'en'){
+          document.documentElement.setAttribute('lang','en');
+          document.documentElement.setAttribute('dir','ltr');
+        }else if(l === 'fa'){
+          document.documentElement.setAttribute('lang','fa');
+          document.documentElement.setAttribute('dir','rtl');
+        }
+      }catch(e){}
+
+      // sync theme early
+      try{
+        var t = localStorage.getItem('mind-islands-theme') || localStorage.getItem('mi_theme') || 'dark';
+        if(t !== 'light' && t !== 'dark') t = 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      }catch(e){}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070b14">
+  <title>ترکیب‌گران (مدل‌های ترکیبی) | جزیره‌های ذهن</title>
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../combiners/_assets/combiner-ui.css">
+  <style>
+    body{--accent-h:200;}
+  </style>
+</head>
+<body data-page="index">
+  <div class="tp-progress"><div class="tp-progress__bar"></div></div>
+  <header class="co-hero">
+    <div class="co-wrap">
+      <div class="co-topbar">
+        <div>
+          <div class="co-breadcrumbs"><a class="tp-link" href="../index.html">خانه</a><span>›</span><span>ترکیب‌گران</span></div>
+          <h1 class="co-h1">ترکیب‌گران (مدل‌های ترکیبی)</h1>
+          <p class="co-lead">هر مدل ترکیبی، چند لنز را با یک ترتیب پیشنهادی کنار هم می‌گذارد تا سریع‌تر و دقیق‌تر خروجی بگیری.</p>
+          <div class="co-ctaRow">
+            <span class="co-chip">🧠 8 مدل</span><span class="co-chip">📄 صفحه + زیرصفحه</span>
+          </div>
+        </div>
+        <div class="co-actions">
+          <button class="tp-iconBtn" data-copy-link title="کپی لینک">🔗</button>
+          <button class="tp-iconBtn" data-theme-toggle title="تم">🌙</button>
+          <button class="tp-iconBtn tp-iconBtn--lang" data-mi-langbtn="1" title="English" aria-label="English">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="co-wrap" style="padding:1.2rem 1rem 0">
+    <div class="co-grid">
+      <aside class="co-side">
+        <div class="co-card">
+          <div class="co-small" style="margin-bottom:.6rem">ناوبری مدل</div>
+          <nav class="co-nav" data-subnav>
+            <a href="./dual/index.html" data-page="dual">⚖️ مدل دوگانه<span class="co-badge2">Dual Model</span></a><a href="./triple/index.html" data-page="triple">🔺 مدل سه‌گانه<span class="co-badge2">Triple Model</span></a><a href="./quad/index.html" data-page="quad">🎯 مدل چهارگانه<span class="co-badge2">Quad Model</span></a><a href="./full/index.html" data-page="full">🌟 مدل کامل THINK-360+<span class="co-badge2">Full THINK-360+ Model</span></a><a href="./quick/index.html" data-page="quick">⚡ مدل سریع<span class="co-badge2">Quick Model</span></a><a href="./people/index.html" data-page="people">❤️ مدل محور انسان<span class="co-badge2">Human-Centered Model</span></a><a href="./innovation/index.html" data-page="innovation">💡 مدل نوآوری<span class="co-badge2">Innovation Model</span></a><a href="./problem/index.html" data-page="problem">🔧 مدل حل مسئله<span class="co-badge2">Problem-Solving Model</span></a>
+          </nav>
+          <div style="margin-top:1rem" class="co-small">می‌خوای برگردی داخل اپ؟ <a class="tp-link" href="../index.html">صفحه اصلی</a></div>
+        </div>
+      </aside>
+      <div class="co-main">
+
+      <div class="co-card" style="padding:1rem;margin-bottom:1rem">
+        <div class="co-section">
+          <h2 style="margin:.1rem 0 .4rem">فهرست مدل‌ها</h2>
+          <p style="margin:.2rem 0 .6rem" class="co-small">جستجو کن، مدل را باز کن، زیرصفحه‌ها را بخوان، و بعد واقعاً ازش استفاده کن.</p>
+          <input id="q" class="tp-input" placeholder="جستجو: نام مدل، English, یا id ..." style="width:100%;padding:.75rem .9rem;border-radius:14px;border:1px solid var(--stroke);background:var(--card2);color:var(--text)">
+        </div>
+      </div>
+      <div class="co-grid" style="grid-template-columns:1fr;gap:1rem">
+        <div class="co-main">
+          <div style="display:grid;grid-template-columns:1fr;gap:1rem" id="list">
+            
+        <div class="co-card" style="padding:1rem" data-card data-id="dual" data-name="مدل دوگانه Dual Model">
+          <div style="display:flex;align-items:flex-start;gap:.8rem">
+            <div class="co-step__badge" style="background:#3b82f622;border-color:#3b82f655;width:52px;height:52px;border-radius:18px;font-size:1.35rem">⚖️</div>
+            <div style="flex:1">
+              <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+                <h3 style="margin:.1rem 0;font-size:1.2rem;color:#3b82f6">مدل دوگانه</h3>
+                <span class="co-badge2">Dual Model</span>
+              </div>
+              <div class="co-small" style="margin-top:.25rem">ترکیب دو سبک متضاد برای تعادل</div>
+              <div class="co-ctaRow" style="margin-top:.6rem"><span class="co-badge2" style="border-color:#3b82f666;color:#3b82f6">🔍 تحلیلی</span><span class="co-badge2" style="border-color:#ec489966;color:#ec4899">🎨 خلاق</span></div>
+              <div class="co-ctaRow" style="margin-top:.8rem">
+                <a class="co-btn" href="./dual/index.html">📘 صفحه مدل</a>
+                <a class="co-btn" href="./dual/workflow.html">🧭 گام‌ها</a>
+                <a class="co-btn" href="./dual/examples.html">📚 سناریوها</a>
+                <a class="co-btn" href="./dual/templates.html">🧩 قالب‌ها</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="co-card" style="padding:1rem" data-card data-id="triple" data-name="مدل سه‌گانه Triple Model">
+          <div style="display:flex;align-items:flex-start;gap:.8rem">
+            <div class="co-step__badge" style="background:#8b5cf622;border-color:#8b5cf655;width:52px;height:52px;border-radius:18px;font-size:1.35rem">🔺</div>
+            <div style="flex:1">
+              <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+                <h3 style="margin:.1rem 0;font-size:1.2rem;color:#8b5cf6">مدل سه‌گانه</h3>
+                <span class="co-badge2">Triple Model</span>
+              </div>
+              <div class="co-small" style="margin-top:.25rem">تحلیل، خلاقیت و ارزیابی</div>
+              <div class="co-ctaRow" style="margin-top:.6rem"><span class="co-badge2" style="border-color:#3b82f666;color:#3b82f6">🔍 تحلیلی</span><span class="co-badge2" style="border-color:#ec489966;color:#ec4899">🎨 خلاق</span><span class="co-badge2" style="border-color:#f59e0b66;color:#f59e0b">⚖️ انتقادی</span></div>
+              <div class="co-ctaRow" style="margin-top:.8rem">
+                <a class="co-btn" href="./triple/index.html">📘 صفحه مدل</a>
+                <a class="co-btn" href="./triple/workflow.html">🧭 گام‌ها</a>
+                <a class="co-btn" href="./triple/examples.html">📚 سناریوها</a>
+                <a class="co-btn" href="./triple/templates.html">🧩 قالب‌ها</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="co-card" style="padding:1rem" data-card data-id="quad" data-name="مدل چهارگانه Quad Model">
+          <div style="display:flex;align-items:flex-start;gap:.8rem">
+            <div class="co-step__badge" style="background:#10b98122;border-color:#10b98155;width:52px;height:52px;border-radius:18px;font-size:1.35rem">🎯</div>
+            <div style="flex:1">
+              <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+                <h3 style="margin:.1rem 0;font-size:1.2rem;color:#10b981">مدل چهارگانه</h3>
+                <span class="co-badge2">Quad Model</span>
+              </div>
+              <div class="co-small" style="margin-top:.25rem">تحلیل، خلاقیت، همدلی و انتقاد</div>
+              <div class="co-ctaRow" style="margin-top:.6rem"><span class="co-badge2" style="border-color:#3b82f666;color:#3b82f6">🔍 تحلیلی</span><span class="co-badge2" style="border-color:#ec489966;color:#ec4899">🎨 خلاق</span><span class="co-badge2" style="border-color:#f43f5e66;color:#f43f5e">❤️ همدلانه</span><span class="co-badge2" style="border-color:#f59e0b66;color:#f59e0b">⚖️ انتقادی</span></div>
+              <div class="co-ctaRow" style="margin-top:.8rem">
+                <a class="co-btn" href="./quad/index.html">📘 صفحه مدل</a>
+                <a class="co-btn" href="./quad/workflow.html">🧭 گام‌ها</a>
+                <a class="co-btn" href="./quad/examples.html">📚 سناریوها</a>
+                <a class="co-btn" href="./quad/templates.html">🧩 قالب‌ها</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="co-card" style="padding:1rem" data-card data-id="full" data-name="مدل کامل THINK-360+ Full THINK-360+ Model">
+          <div style="display:flex;align-items:flex-start;gap:.8rem">
+            <div class="co-step__badge" style="background:#f59e0b22;border-color:#f59e0b55;width:52px;height:52px;border-radius:18px;font-size:1.35rem">🌟</div>
+            <div style="flex:1">
+              <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+                <h3 style="margin:.1rem 0;font-size:1.2rem;color:#f59e0b">مدل کامل THINK-360+</h3>
+                <span class="co-badge2">Full THINK-360+ Model</span>
+              </div>
+              <div class="co-small" style="margin-top:.25rem">همه ۷ لنز به ترتیب</div>
+              <div class="co-ctaRow" style="margin-top:.6rem"><span class="co-badge2" style="border-color:#f43f5e66;color:#f43f5e">❤️ همدلانه</span><span class="co-badge2" style="border-color:#3b82f666;color:#3b82f6">🔍 تحلیلی</span><span class="co-badge2" style="border-color:#ec489966;color:#ec4899">🎨 خلاق</span><span class="co-badge2" style="border-color:#f59e0b66;color:#f59e0b">⚖️ انتقادی</span><span class="co-badge2" style="border-color:#10b98166;color:#10b981">🔗 سیستمی</span><span class="co-badge2" style="border-color:#8b5cf666;color:#8b5cf6">♟️ استراتژیک</span><span class="co-badge2" style="border-color:#06b6d466;color:#06b6d4">🧪 تجربی</span></div>
+              <div class="co-ctaRow" style="margin-top:.8rem">
+                <a class="co-btn" href="./full/index.html">📘 صفحه مدل</a>
+                <a class="co-btn" href="./full/workflow.html">🧭 گام‌ها</a>
+                <a class="co-btn" href="./full/examples.html">📚 سناریوها</a>
+                <a class="co-btn" href="./full/templates.html">🧩 قالب‌ها</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="co-card" style="padding:1rem" data-card data-id="quick" data-name="مدل سریع Quick Model">
+          <div style="display:flex;align-items:flex-start;gap:.8rem">
+            <div class="co-step__badge" style="background:#ef444422;border-color:#ef444455;width:52px;height:52px;border-radius:18px;font-size:1.35rem">⚡</div>
+            <div style="flex:1">
+              <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+                <h3 style="margin:.1rem 0;font-size:1.2rem;color:#ef4444">مدل سریع</h3>
+                <span class="co-badge2">Quick Model</span>
+              </div>
+              <div class="co-small" style="margin-top:.25rem">دو لنز برای مواقع عجله</div>
+              <div class="co-ctaRow" style="margin-top:.6rem"><span class="co-badge2" style="border-color:#3b82f666;color:#3b82f6">🔍 تحلیلی</span><span class="co-badge2" style="border-color:#8b5cf666;color:#8b5cf6">♟️ استراتژیک</span></div>
+              <div class="co-ctaRow" style="margin-top:.8rem">
+                <a class="co-btn" href="./quick/index.html">📘 صفحه مدل</a>
+                <a class="co-btn" href="./quick/workflow.html">🧭 گام‌ها</a>
+                <a class="co-btn" href="./quick/examples.html">📚 سناریوها</a>
+                <a class="co-btn" href="./quick/templates.html">🧩 قالب‌ها</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="co-card" style="padding:1rem" data-card data-id="people" data-name="مدل محور انسان Human-Centered Model">
+          <div style="display:flex;align-items:flex-start;gap:.8rem">
+            <div class="co-step__badge" style="background:#ec489922;border-color:#ec489955;width:52px;height:52px;border-radius:18px;font-size:1.35rem">❤️</div>
+            <div style="flex:1">
+              <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+                <h3 style="margin:.1rem 0;font-size:1.2rem;color:#ec4899">مدل محور انسان</h3>
+                <span class="co-badge2">Human-Centered Model</span>
+              </div>
+              <div class="co-small" style="margin-top:.25rem">همدلی، خلاقیت و سیستمی</div>
+              <div class="co-ctaRow" style="margin-top:.6rem"><span class="co-badge2" style="border-color:#f43f5e66;color:#f43f5e">❤️ همدلانه</span><span class="co-badge2" style="border-color:#ec489966;color:#ec4899">🎨 خلاق</span><span class="co-badge2" style="border-color:#10b98166;color:#10b981">🔗 سیستمی</span></div>
+              <div class="co-ctaRow" style="margin-top:.8rem">
+                <a class="co-btn" href="./people/index.html">📘 صفحه مدل</a>
+                <a class="co-btn" href="./people/workflow.html">🧭 گام‌ها</a>
+                <a class="co-btn" href="./people/examples.html">📚 سناریوها</a>
+                <a class="co-btn" href="./people/templates.html">🧩 قالب‌ها</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="co-card" style="padding:1rem" data-card data-id="innovation" data-name="مدل نوآوری Innovation Model">
+          <div style="display:flex;align-items:flex-start;gap:.8rem">
+            <div class="co-step__badge" style="background:#06b6d422;border-color:#06b6d455;width:52px;height:52px;border-radius:18px;font-size:1.35rem">💡</div>
+            <div style="flex:1">
+              <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+                <h3 style="margin:.1rem 0;font-size:1.2rem;color:#06b6d4">مدل نوآوری</h3>
+                <span class="co-badge2">Innovation Model</span>
+              </div>
+              <div class="co-small" style="margin-top:.25rem">خلاقیت، تجربی و استراتژیک</div>
+              <div class="co-ctaRow" style="margin-top:.6rem"><span class="co-badge2" style="border-color:#ec489966;color:#ec4899">🎨 خلاق</span><span class="co-badge2" style="border-color:#06b6d466;color:#06b6d4">🧪 تجربی</span><span class="co-badge2" style="border-color:#8b5cf666;color:#8b5cf6">♟️ استراتژیک</span></div>
+              <div class="co-ctaRow" style="margin-top:.8rem">
+                <a class="co-btn" href="./innovation/index.html">📘 صفحه مدل</a>
+                <a class="co-btn" href="./innovation/workflow.html">🧭 گام‌ها</a>
+                <a class="co-btn" href="./innovation/examples.html">📚 سناریوها</a>
+                <a class="co-btn" href="./innovation/templates.html">🧩 قالب‌ها</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="co-card" style="padding:1rem" data-card data-id="problem" data-name="مدل حل مسئله Problem-Solving Model">
+          <div style="display:flex;align-items:flex-start;gap:.8rem">
+            <div class="co-step__badge" style="background:#6366f122;border-color:#6366f155;width:52px;height:52px;border-radius:18px;font-size:1.35rem">🔧</div>
+            <div style="flex:1">
+              <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center">
+                <h3 style="margin:.1rem 0;font-size:1.2rem;color:#6366f1">مدل حل مسئله</h3>
+                <span class="co-badge2">Problem-Solving Model</span>
+              </div>
+              <div class="co-small" style="margin-top:.25rem">تحلیل، سیستمی و انتقادی</div>
+              <div class="co-ctaRow" style="margin-top:.6rem"><span class="co-badge2" style="border-color:#3b82f666;color:#3b82f6">🔍 تحلیلی</span><span class="co-badge2" style="border-color:#10b98166;color:#10b981">🔗 سیستمی</span><span class="co-badge2" style="border-color:#f59e0b66;color:#f59e0b">⚖️ انتقادی</span></div>
+              <div class="co-ctaRow" style="margin-top:.8rem">
+                <a class="co-btn" href="./problem/index.html">📘 صفحه مدل</a>
+                <a class="co-btn" href="./problem/workflow.html">🧭 گام‌ها</a>
+                <a class="co-btn" href="./problem/examples.html">📚 سناریوها</a>
+                <a class="co-btn" href="./problem/templates.html">🧩 قالب‌ها</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+          </div>
+        </div>
+      </div>
+      <script>
+      (function(){
+        const q=document.getElementById('q');
+        const cards=[...document.querySelectorAll('[data-card]')];
+        function run(){
+          const v=(q.value||'').toLowerCase().trim();
+          cards.forEach(c=>{
+            const t=(c.getAttribute('data-name')||'')+' '+(c.getAttribute('data-id')||'');
+            const ok = !v || t.toLowerCase().includes(v);
+            c.style.display = ok ? '' : 'none';
+          });
+        }
+        q.addEventListener('input', run);
+      })();
+      </script>
+    
+      </div>
+    </div>
+  </main>
+  <footer class="co-footer">
+    <div>© جزیره‌های ذهن. نسخه لوکال.</div>
+    <div class="co-small">این صفحه‌ها برای مطالعه و استفاده عملی طراحی شده‌اند.</div>
+  </footer>
+  <script src="../combiners/_assets/combiner-page.js"></script>
+  <script src="combiner-enhance.js" defer></script>
+</body>
+</html>

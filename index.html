@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070b14" />
+    <meta name="description" content="Mind Islands (جزیره‌های ذهن) - Offline-first interactive companion for multi-dimensional thinking." />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <title>Mind Islands - جزیره‌های ذهن</title>
+
+    <script>
+      (function(){
+        // Apply saved theme + language ASAP (avoid flash across pages)
+        try{
+          var theme = (localStorage.getItem('mind-islands-theme') || 'dark');
+          theme = (theme === 'light') ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+
+          var lang = (localStorage.getItem('mind-islands-lang') || 'fa').toLowerCase().startsWith('en') ? 'en' : 'fa';
+          document.documentElement.lang = lang;
+          document.documentElement.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+
+          // keep address-bar / PWA chrome color consistent (best-effort)
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', theme === 'light' ? '#f5f7fb' : '#070b14');
+        }catch(e){}
+      })();
+    </script>
+    <script defer src="./app.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+  <div id="mi-sw-toast" class="mi-sw-toast" role="status" aria-live="polite" hidden>
+    <span>نسخه جدید آماده است.</span>
+    <button id="mi-sw-reload" type="button">به‌روزرسانی</button>
+    <button id="mi-sw-dismiss" type="button" aria-label="بستن">×</button>
+  </div>
+    <div id="mi-splash" aria-hidden="true">
+      <div class="box">
+        <div class="title">در حال بارگذاری Mind Islands…</div>
+        <div class="hint">اگر این صفحه بیش از چند ثانیه ماند، معمولاً مشکل از سرور محلی، کش مرورگر، یا محدودیت‌های Service Worker است. یک بار ریفرش، ریست Apache، و پاک کردن کش مرورگر معمولاً حلش می‌کند.</div>
+      </div>
+    </div>
+    <noscript><div style="padding:16px;font-family:system-ui;line-height:1.6">برای اجرا باید JavaScript فعال باشد. If you see a blank page, extract the ZIP and open <b>index.html</b>. If you want PWA/offline cache, run via a local server (e.g. python -m http.server).</div></noscript>
+    <div id="mi-dock" class="mi-dock glass" data-mi-noi18n="1">
+      <button type="button" class="mi-dock-btn" data-mi-themebtn="1">☀️ Light</button>
+    </div>
+
+    
+    <script>
+      (function(){
+        if (new URLSearchParams(location.search).has('noenh')) return;
+        var s=document.createElement('script');
+        s.defer=true; s.src='./enhancements.js';
+        document.currentScript.parentNode.insertBefore(s, document.currentScript.nextSibling);
+      })();
+    </script>
+
+
+    <script>
+  (function(){
+    function hideSplash(){
+      var el = document.getElementById('mi-splash');
+      if (el) el.style.display='none';
+    }
+
+    var params = new URLSearchParams(location.search);
+    var diag = params.has('diag') || params.get('debug') === '1';
+
+    function stripCodePath(node){
+      if (diag) return;
+      try{
+        if (node && node.nodeType === 1){
+          if (node.hasAttribute && node.hasAttribute('code-path')) node.removeAttribute('code-path');
+          if (node.querySelectorAll){
+            node.querySelectorAll('[code-path]').forEach(function(el){ el.removeAttribute('code-path'); });
+          }
+        }
+      }catch(_){}
+    }
+
+    var root = document.getElementById('root');
+    if (root && 'MutationObserver' in window){
+      stripCodePath(root);
+
+      var mo = new MutationObserver(function(muts){
+        for (var i=0;i<muts.length;i++){
+          var m = muts[i];
+          if (m.addedNodes){
+            for (var j=0;j<m.addedNodes.length;j++){
+              stripCodePath(m.addedNodes[j]);
+            }
+          }
+        }
+        if (root.childNodes && root.childNodes.length > 0){
+          hideSplash();
+          mo.disconnect();
+        }
+      });
+
+      mo.observe(root, { childList:true, subtree:true });
+
+      setTimeout(hideSplash, 2500);
+    } else {
+      setTimeout(hideSplash, 2500);
+    }
+  })();
+</script>
+
+
+    <script>
+  // Offline support (Service Worker)
+  (function () {
+    if (!('serviceWorker' in navigator)) return;
+
+    var params = new URLSearchParams(location.search);
+    if (params.has('nosw')) return;
+
+    var toast = document.getElementById('mi-sw-toast');
+    var btnReload = document.getElementById('mi-sw-reload');
+    var btnDismiss = document.getElementById('mi-sw-dismiss');
+
+    var waitingWorker = null;
+    var wantsReload = false;
+    var reloaded = false;
+
+    function showToast() { if (toast) toast.hidden = false; }
+    function hideToast() { if (toast) toast.hidden = true; }
+
+    if (btnDismiss) btnDismiss.addEventListener('click', hideToast);
+    if (btnReload) btnReload.addEventListener('click', function () {
+      wantsReload = true;
+      hideToast();
+      try {
+        if (waitingWorker) waitingWorker.postMessage({ type: 'SKIP_WAITING' });
+      } catch (_) {}
+    });
+
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (!wantsReload) return;
+      if (reloaded) return;
+      reloaded = true;
+      window.location.reload();
+    });
+
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('./service-worker.js?v=32').then(function (reg) {
+        try { reg.update(); } catch (_) {}
+
+        function maybeShowUpdate() {
+          try {
+            waitingWorker = reg.waiting;
+            if (waitingWorker && navigator.serviceWorker.controller) showToast();
+          } catch (_) {}
+        }
+
+        // If an update is already waiting
+        maybeShowUpdate();
+
+        reg.addEventListener('updatefound', function () {
+          var nw = reg.installing;
+          if (!nw) return;
+          nw.addEventListener('statechange', function () {
+            if (nw.state === 'installed') {
+              // Only show toast on updates, not first install.
+              if (navigator.serviceWorker.controller) {
+                setTimeout(maybeShowUpdate, 50);
+              }
+            }
+          });
+        });
+      }).catch(function () {});
+    });
+  })();
+</script>
+
+
+    <script id="mi-blank-guard">
+      // If JS/CSS files fail to load (common when opening directly inside a ZIP), show a helpful hint.
+      setTimeout(function(){
+        try {
+          var root = document.getElementById('root');
+          if (!root) return;
+          if (root.childNodes && root.childNodes.length > 0) return;
+          var box = document.createElement('div');
+          box.style.cssText = 'padding:16px;margin:16px;border:1px solid rgba(255,255,255,.15);border-radius:12px;background:rgba(0,0,0,.25);color:#fff;font-family:system-ui;line-height:1.7';
+          box.innerHTML = 'صفحه خالی است چون فایل‌ها درست لود نشده‌اند.<br>۱) ZIP را کامل Extract کن.<br>۲) فایل <b>index.html</b> را از پوشه‌ی Extract شده باز کن.<br>۳) اگر می‌خواهی Service Worker (کش آفلاین) فعال شود، با یک سرور ساده اجرا کن: <code>python -m http.server 8080</code> و بعد برو روی <code>http://localhost:8080</code>.';
+          root.appendChild(box);
+        } catch (_) {}
+      }, 1600);
+    </script>
+
+  
+    <script id="mi-diag">
+      // Tiny self-diagnosis (because computers enjoy suffering).
+      (function(){
+        const params = new URLSearchParams(location.search);
+        const diag = params.has('diag');
+        const host = location.host;
+        const box = document.createElement('div');
+        box.id = 'mi-diag-box';
+        box.style.cssText = 'position:fixed;bottom:12px;left:12px;z-index:99999;max-width:min(520px,calc(100vw - 24px));background:rgba(0,0,0,.55);backdrop-filter:blur(8px);color:#fff;font:12px/1.6 system-ui;padding:10px 12px;border:1px solid rgba(255,255,255,.18);border-radius:12px;display:none;'
+        box.innerHTML = '<b>Diag</b> | ' + host + '<br><span id="mi-diag-lines">loading…</span>';
+        document.body.appendChild(box);
+
+        function line(msg){
+          const el = document.getElementById('mi-diag-lines');
+          if(!el) return;
+          el.innerHTML += '<br>' + msg;
+        }
+
+        function show(){ box.style.display='block'; }
+        if (diag) show();
+
+        // Warn if page is requested without trailing slash (can break relative paths in some setups)
+        try{
+          const u = location.pathname;
+          if(!u.endsWith('/') && !u.endsWith('index.html')) line('⚠️ URL بدون / آخر: بهتره با / یا index.html باز کنی.');
+        }catch(_){ }
+
+        // After 2s, if app didn't mount, show and print resource load info
+        setTimeout(function(){
+          try{
+            const root = document.getElementById('root');
+            const mounted = root && root.childNodes && root.childNodes.length>0;
+            if(!mounted){
+              show();
+              line('❌ UI هنوز mount نشده. احتمالاً app.js یا styles.css مشکل دارد.');
+            } else if (diag) {
+              line('✅ UI mount شد. اگر هنوز spinner داری، مشکل از state/logic است.');
+            }
+
+            // Resource entries
+            const ents = (performance.getEntriesByType && performance.getEntriesByType('resource')) || [];
+            const want = ['app.js','styles.css','enhancements.js','service-worker.js','manifest.webmanifest'];
+            for(const w of want){
+              const hit = ents.filter(e=>String(e.name||'').includes(w)).sort((a,b)=>b.duration-a.duration)[0];
+              if(hit) line('• ' + w + ' | ' + Math.round(hit.duration) + 'ms | ' + (hit.transferSize||0) + 'B');
+              else line('• ' + w + ' | (no entry yet)');
+            }
+            if (diag || !mounted){
+              // Quick fetch test (4s timeout) for app.js (only when needed)
+              const ctrl = ('AbortController' in window) ? new AbortController() : null;
+              const to = ctrl ? setTimeout(()=>ctrl.abort(), 4000) : null;
+              fetch('./app.js', {cache: (diag ? 'no-store' : 'reload'), signal: ctrl?ctrl.signal:undefined}).then(r=>{
+                if(to) clearTimeout(to);
+            }
+line('fetch app.js => ' + r.status);
+            }).catch(err=>{
+              if(to) clearTimeout(to);
+              line('fetch app.js => FAILED (' + (err && err.name ? err.name : 'error') + ')');
+            });
+          }catch(e){ show(); line('diag error: ' + e); }
+        }, 2000);
+      })();
+    </script>
+
+  </body>
+</html>

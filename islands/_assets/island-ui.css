@@ -1,0 +1,177 @@
+/* Islands UI (built on top of traps/trap-ui.css) */
+
+.is-hero{padding:2.2rem 1rem 1.2rem;border-bottom:1px solid var(--stroke)}
+.is-wrap{max-width:var(--max);margin:0 auto}
+.is-h1{margin:.7rem 0 .2rem;font-size:2.1rem;letter-spacing:-.4px}
+@media(min-width:900px){.is-h1{font-size:2.6rem}}
+.is-lead{margin:0;color:var(--muted);line-height:1.9}
+
+.is-tools{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:1.1rem}
+
+/* search pill */
+.is-search{
+  flex:1;
+  min-width:240px;
+  display:flex;
+  gap:.5rem;
+  align-items:center;
+  padding:.55rem .9rem;
+  border-radius:999px;
+  border:1px solid var(--glass-border);
+  background:var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(160%);
+  color:var(--text);
+  font-size:1rem;
+}
+.is-search input{
+  flex:1;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:inherit;
+  font-size:1rem;
+}
+.is-search input::placeholder{ color: var(--muted); }
+
+.is-grid{max-width:var(--max);margin:0 auto;padding:1.4rem 1rem 2.5rem;display:grid;gap:.9rem}
+@media(min-width:760px){.is-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.is-grid{grid-template-columns:repeat(3,1fr)}}
+
+.is-card{
+  display:flex;
+  flex-direction:column;
+  gap:.55rem;
+  padding:1rem;
+  border-radius:calc(var(--r) + 2px);
+  border:1px solid var(--glass-border);
+  background:var(--glass-bg-strong);
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+  cursor:pointer;
+  transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;
+
+  backdrop-filter: blur(calc(var(--glass-blur) + 6px)) saturate(160%);
+  -webkit-backdrop-filter: blur(calc(var(--glass-blur) + 6px)) saturate(160%);
+}
+.is-card:before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:
+    radial-gradient(520px 280px at 85% 0%, color-mix(in oklab, hsl(var(--accent-h) 90% 60%) 24%, transparent), transparent 62%),
+    radial-gradient(520px 300px at 10% 120%, color-mix(in oklab, hsl(calc(var(--accent-h) + 18) 90% 60%) 12%, transparent), transparent 62%);
+  opacity:.95;
+  pointer-events:none;
+}
+.is-card:hover{
+  transform:translateY(-3px);
+  border-color:color-mix(in oklab, var(--accent) 40%, var(--stroke));
+  box-shadow: 0 16px 50px rgba(0,0,0,.28);
+}
+.is-card:focus-visible{
+  outline:2px solid color-mix(in oklab, var(--accent) 55%, transparent);
+  outline-offset:2px;
+}
+
+.is-card__top{display:flex;gap:.75rem;align-items:flex-start;position:relative}
+.is-chip{
+  width:2.5rem;height:2.5rem;
+  border-radius:16px;
+  display:grid;place-items:center;
+  border:1px solid color-mix(in oklab, var(--accent) 40%, var(--stroke));
+  background:color-mix(in oklab, var(--accent) 14%, transparent);
+  font-size:1.15rem;
+  flex:0 0 auto;
+}
+
+.is-head{min-width:0;flex:1 1 auto;position:relative}
+.is-title{font-weight:950;letter-spacing:-.2px;line-height:1.25}
+.is-stage{display:flex;align-items:center;gap:.55rem;margin-top:.25rem;flex-wrap:wrap}
+.is-badge{
+  padding:.2rem .55rem;
+  border-radius:999px;
+  border:1px solid color-mix(in oklab, var(--accent) 35%, var(--stroke));
+  background:color-mix(in oklab, var(--accent) 10%, transparent);
+  color:var(--text);
+  font-size:.82rem;
+  font-weight:800;
+}
+.is-id{color:var(--muted2);font-size:.82rem}
+
+.is-arrow{
+  position:relative;
+  margin-inline-start:auto;
+  width:2.1rem;height:2.1rem;
+  border-radius:14px;
+  display:grid;place-items:center;
+  border:1px solid var(--stroke);
+  background:color-mix(in oklab, var(--card2) 86%, transparent);
+  color:var(--muted);
+  flex:0 0 auto;
+}
+
+.is-desc{position:relative;color:var(--muted);line-height:1.85}
+
+.is-actions{position:relative;display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.1rem}
+.is-act{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:.34rem .65rem;
+  border-radius:999px;
+  border:1px solid var(--stroke);
+  background:color-mix(in oklab, var(--card2) 86%, transparent);
+  color:var(--text);
+  font-size:.86rem;
+  font-weight:750;
+  transition:transform .15s ease,border-color .15s ease,background-color .15s ease;
+}
+.is-act:hover{transform:translateY(-1px);border-color:color-mix(in oklab, var(--accent) 42%, var(--stroke))}
+.is-act--primary{
+  border-color:color-mix(in oklab, var(--accent) 52%, var(--stroke));
+  background:color-mix(in oklab, var(--accent) 16%, transparent);
+}
+
+.is-tags{position:relative;display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.15rem}
+.is-tag{padding:.22rem .55rem;border-radius:999px;border:1px solid var(--stroke);background:color-mix(in oklab, var(--card2) 92%, transparent);color:var(--muted);font-size:.82rem}
+
+.is-empty{max-width:var(--max);margin:0 auto;padding:0 1rem;color:var(--muted);display:none}
+
+/* Island page */
+.ip-main{max-width:var(--max);margin:0 auto;padding:1.2rem 1rem 3rem;display:grid;gap:1rem}
+@media(min-width:900px){.ip-main{grid-template-columns:1fr .8fr;align-items:start}}
+
+.ip-card{padding:1rem;border-radius:var(--r);border:1px solid var(--stroke);background:color-mix(in oklab, var(--card) 92%, transparent);box-shadow:var(--shadow)}
+.ip-card h2{margin:.1rem 0 .5rem;font-size:1.18rem}
+.ip-card p{margin:.4rem 0;color:var(--muted);line-height:1.9}
+
+.ip-list{margin:.4rem 0 0;padding:0 1.2rem;color:var(--muted);line-height:1.9}
+
+/* Reveal helpers */
+.mi-reveal{opacity:0;transform:translateY(10px);transition:opacity .25s ease,transform .25s ease}
+.mi-reveal.is-in{opacity:1;transform:translateY(0)}
+
+
+/* Details / accordion helpers for island pages */
+.ip-details{
+  margin:.6rem 0;
+  padding:.35rem .65rem;
+  border:1px solid var(--stroke);
+  border-radius:calc(var(--r) - 2px);
+  background:color-mix(in oklab, var(--card) 86%, transparent);
+}
+.ip-details > summary{
+  cursor:pointer;
+  list-style:none;
+  font-weight:800;
+  color:var(--text);
+  outline:none;
+}
+.ip-details > summary::-webkit-details-marker{display:none}
+.ip-details[open]{background:color-mix(in oklab, var(--accent) 8%, var(--card))}
+.ip-details p{margin:.5rem 0 .25rem}
+.ip-details .ip-list{margin:.25rem 0 .5rem}
+
+.ip-cards{display:grid;gap:.6rem}
+.ip-chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.ip-acc{margin-top:.6rem}

@@ -1,0 +1,61 @@
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script data-mi-early="1">
+  (function(){
+    try{
+      var root=document.documentElement;
+      var theme=localStorage.getItem('mind-islands-theme');
+      if(theme==='light'||theme==='dark') root.setAttribute('data-theme', theme);
+      var lang=localStorage.getItem('mind-islands-lang');
+      if(lang==='en'){ root.lang='en'; root.dir='ltr'; root.setAttribute('data-lang','en'); }
+      else { root.lang='fa'; root.dir='rtl'; root.setAttribute('data-lang','fa'); }
+      var meta=document.querySelector('meta[name="theme-color"]');
+      if(meta){ meta.setAttribute('content', (root.getAttribute('data-theme')==='light') ? '#fbfaf8' : '#070b14'); }
+    }catch(e){}
+  })();
+  </script>
+  <meta name="theme-color" content="#070b14">
+  <title>جزیره‌ها | Mind Islands</title>
+  <link rel="icon" href="../favicon.svg">
+  <link rel="stylesheet" href="../traps/trap-ui.css">
+  <link rel="stylesheet" href="./_assets/island-ui.css">
+</head>
+<body>
+  <div class="is-hero">
+    <div class="is-wrap">
+      <nav class="tp-nav">
+        <a class="tp-btn" href="../index.html">🏝️ اپ</a>
+        <a class="tp-btn" href="../traps/index.html">🧠 تله‌ها</a>
+        <a class="tp-btn" href="../combiners/index.html">🧩 مدل‌های ترکیبی</a>
+        <button class="tp-btn" type="button" data-theme-toggle="1" aria-label="تغییر تم">🌙</button>
+        <button class="tp-btn" type="button" data-mi-langbtn="1">EN</button>
+      </nav>
+
+      <h1 class="is-h1" data-mi-lang="fa">جزیره‌های ذهن</h1>
+      <h1 class="is-h1" data-mi-lang="en" hidden>Mind Islands</h1>
+
+      <p class="is-lead" data-mi-lang="fa">هر جزیره یک «لنز فکری» است. اینجا کارت‌ها رو باز کن، جزئیات رو بخون، و از همینجا به تله‌های مرتبط و مدل‌های ترکیبی لینک بگیر.</p>
+      <p class="is-lead" data-mi-lang="en" hidden>Each island is a thinking lens. Open the cards, read the details, and jump to related traps and combiner models.</p>
+
+      <div class="is-tools">
+        <div class="is-search" role="search">
+          <span aria-hidden="true">🔎</span>
+          <input id="q" type="search" placeholder="جستجو: مثلا «تحلیلی» یا analytical">
+        </div>
+        <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+          <button class="tp-btn tp-btn--solid" type="button" id="clear" data-mi-lang="fa">پاک کردن</button>
+          <button class="tp-btn tp-btn--solid" type="button" id="clear_en" data-mi-lang="en" hidden>Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="is-grid" id="grid"></div>
+  <div class="is-empty" id="empty" data-mi-lang="fa">نتیجه‌ای پیدا نشد.</div>
+  <div class="is-empty" id="empty_en" data-mi-lang="en" hidden>No results.</div>
+
+  <script defer src="./_assets/islands-pages.js"></script>
+</body>
+</html>

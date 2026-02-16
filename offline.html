@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#070b14" />
+  <title>Offline | Mind Islands</title>
+
+  <script data-mi-early="1">
+  (function(){
+    try{
+      var root=document.documentElement;
+      var theme=localStorage.getItem('mind-islands-theme');
+      if(theme==='light'||theme==='dark') root.setAttribute('data-theme', theme);
+      var lang=localStorage.getItem('mind-islands-lang');
+      if(lang==='en'){ root.lang='en'; root.dir='ltr'; root.setAttribute('data-lang','en'); }
+      else { root.lang='fa'; root.dir='rtl'; root.setAttribute('data-lang','fa'); }
+      var meta=document.querySelector('meta[name="theme-color"]');
+      if(meta){ meta.setAttribute('content', (root.getAttribute('data-theme')==='light') ? '#fbfaf8' : '#070b14'); }
+    }catch(e){}
+  })();
+  </script>
+
+  <style>
+    :root{
+      --bg0:#070b14;
+      --bg1:#0b1220;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.10);
+      --border: rgba(255,255,255,.14);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --muted2: rgba(255,255,255,.52);
+      --shadow: 0 18px 44px rgba(0,0,0,.45);
+      --ring: rgba(56,189,248,.28);
+    }
+    html[data-theme="light"]{
+      --bg0:#fbfaf8;
+      --bg1:#ffffff;
+      --card: rgba(255,255,255,.78);
+      --card2: rgba(255,255,255,.92);
+      --border: rgba(8,16,25,.14);
+      --text: rgba(8,16,25,.92);
+      --muted: rgba(8,16,25,.68);
+      --muted2: rgba(8,16,25,.52);
+      --shadow: 0 18px 44px rgba(0,0,0,.12);
+      --ring: rgba(14,165,233,.20);
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 12% 10%, rgba(56,189,248,.14), transparent 55%),
+        radial-gradient(900px 520px at 82% 20%, rgba(168,85,247,.12), transparent 58%),
+        radial-gradient(900px 520px at 45% 95%, rgba(34,197,94,.10), transparent 62%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .card{
+      width:min(720px, 100%);
+      border-radius: 22px;
+      background: linear-gradient(180deg, var(--card2), var(--card));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      padding: 22px 22px 18px;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      position: relative;
+      overflow: hidden;
+    }
+    .card:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(260px 140px at 20% 15%, rgba(56,189,248,.22), transparent 70%),
+        radial-gradient(280px 140px at 85% 25%, rgba(168,85,247,.18), transparent 72%),
+        radial-gradient(260px 140px at 55% 95%, rgba(34,197,94,.14), transparent 72%);
+      opacity:.8;
+      pointer-events:none;
+    }
+    .inner{ position:relative; z-index:1; }
+
+    .top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom: 8px;
+    }
+
+    h1{
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+    p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .hint{ margin-top: 10px; color: var(--muted2); font-size: 13px; }
+
+    .actions{
+      margin-top: 18px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-start;
+    }
+    .btn{
+      appearance:none;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 14px;
+      cursor:pointer;
+      text-decoration:none;
+      font-size: 14px;
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    }
+    html[data-theme="light"] .btn{ background: rgba(8,16,25,.04); }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.18); }
+    html[data-theme="light"] .btn:hover{ background: rgba(8,16,25,.06); border-color: rgba(8,16,25,.18); }
+    .btn:active{ transform: translateY(0px); }
+    .btn:focus-visible{ outline: 3px solid var(--ring); outline-offset: 2px; }
+
+    .spacer{ flex: 1 1 auto; }
+    .mini{
+      padding: 10px 10px;
+      gap:8px;
+      min-width: 46px;
+      justify-content:center;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    code{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+    }
+    html[data-theme="light"] code{ background: rgba(8,16,25,.06); }
+  </style>
+</head>
+
+<body>
+  <div class="card" role="status" aria-live="polite">
+    <div class="inner">
+      <div class="top">
+        <div>
+          <h1 data-mi-lang="fa">اتصال قطع است</h1>
+          <h1 data-mi-lang="en" hidden>You're offline</h1>
+
+          <p data-mi-lang="fa">این صفحه زمانی نمایش داده می‌شود که اینترنت یا شبکه در دسترس نباشد. اگر قبلاً از اپ استفاده کرده باشید، محتوای کش‌شده معمولاً باز می‌شود.</p>
+          <p data-mi-lang="en" hidden>This page appears when the network is unavailable. If you’ve used the app before, cached content should still open.</p>
+
+          <div class="hint" data-mi-lang="fa">اگر نسخه جدید نصب کرده‌اید اما تغییرات را نمی‌بینید، یک «Hard Refresh» یا پاک‌سازی Cache/Service Worker کمک می‌کند.</div>
+          <div class="hint" data-mi-lang="en" hidden>If you installed a new version but don’t see changes, a hard refresh or clearing Cache/Service Worker usually fixes it.</div>
+        </div>
+
+        <div class="actions" style="margin-top:0">
+          <button class="btn mini" type="button" data-theme-toggle aria-label="Theme">🌙</button>
+          <button class="btn mini" type="button" data-lang-toggle aria-label="Language">EN</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn" href="./index.html">
+          <span aria-hidden="true">🏝️</span>
+          <span data-mi-lang="fa">بازگشت به خانه</span>
+          <span data-mi-lang="en" hidden>Back to Home</span>
+        </a>
+
+        <button class="btn" type="button" id="retryBtn">
+          <span aria-hidden="true">🔄</span>
+          <span data-mi-lang="fa">تلاش مجدد</span>
+          <span data-mi-lang="en" hidden>Retry</span>
+        </button>
+
+        <span class="spacer"></span>
+
+        <span class="hint" style="margin-top:0">
+          <span data-mi-lang="fa">کلیدها:</span><span data-mi-lang="en" hidden>Keys:</span>
+          <code>mind-islands-theme</code> <code>mind-islands-lang</code>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      'use strict';
+      var root = document.documentElement;
+      var LANG_KEY='mind-islands-lang';
+      var THEME_KEY='mind-islands-theme';
+
+      function normLang(x){ return x==='en' ? 'en' : 'fa'; }
+      function getLang(){
+        try{ return normLang(localStorage.getItem(LANG_KEY) || root.lang || 'fa'); }catch(e){ return normLang(root.lang || 'fa'); }
+      }
+      function applyLang(lang){
+        lang = normLang(lang);
+        var isFa = lang==='fa';
+        root.lang = lang;
+        root.dir = isFa ? 'rtl' : 'ltr';
+        root.setAttribute('data-lang', lang);
+        try{ localStorage.setItem(LANG_KEY, lang); }catch(e){}
+        document.querySelectorAll('[data-mi-lang]').forEach(function(el){
+          el.hidden = (el.getAttribute('data-mi-lang') !== lang);
+        });
+        var btn = document.querySelector('[data-lang-toggle]');
+        if(btn){
+          btn.textContent = isFa ? 'EN' : 'FA';
+          btn.title = isFa ? 'English' : 'فارسی';
+          btn.setAttribute('aria-label', btn.title);
+        }
+      }
+
+      function normTheme(x){ return x==='light' ? 'light' : 'dark'; }
+      function getTheme(){
+        try{
+          var t = localStorage.getItem(THEME_KEY);
+          if(t==='light'||t==='dark') return t;
+        }catch(e){}
+        return root.getAttribute('data-theme') || 'dark';
+      }
+      function applyTheme(theme){
+        theme = normTheme(theme);
+        root.setAttribute('data-theme', theme);
+        try{ localStorage.setItem(THEME_KEY, theme); }catch(e){}
+        var meta=document.querySelector('meta[name="theme-color"]');
+        if(meta) meta.setAttribute('content', theme==='light' ? '#fbfaf8' : '#070b14');
+        var btn = document.querySelector('[data-theme-toggle]');
+        if(btn) btn.textContent = (theme==='light') ? '☀️' : '🌙';
+      }
+
+      applyLang(getLang());
+      applyTheme(getTheme());
+
+      var langBtn = document.querySelector('[data-lang-toggle]');
+      if(langBtn){
+        langBtn.addEventListener('click', function(){
+          applyLang(getLang()==='fa' ? 'en' : 'fa');
+        });
+      }
+      var themeBtn = document.querySelector('[data-theme-toggle]');
+      if(themeBtn){
+        themeBtn.addEventListener('click', function(){
+          applyTheme(getTheme()==='dark' ? 'light' : 'dark');
+        });
+      }
+
+      var retry = document.getElementById('retryBtn');
+      if(retry){
+        retry.addEventListener('click', function(){
+          try{ location.reload(); }catch(e){}
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

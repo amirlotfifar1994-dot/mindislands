@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <script data-mi-early-theme>
+    (function(){
+      // sync language early (prevents direction/theme mismatch flashes)
+      try{
+        var l = localStorage.getItem('mind-islands-lang');
+        if(l === 'en'){
+          document.documentElement.setAttribute('lang','en');
+          document.documentElement.setAttribute('dir','ltr');
+        }else if(l === 'fa'){
+          document.documentElement.setAttribute('lang','fa');
+          document.documentElement.setAttribute('dir','rtl');
+        }
+      }catch(e){}
+
+      // sync theme early
+      try{
+        var t = localStorage.getItem('mind-islands-theme') || localStorage.getItem('mi_theme') || 'dark';
+        if(t !== 'light' && t !== 'dark') t = 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      }catch(e){}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070b14">
+  <title>مدل حل مسئله (Problem-Solving Model) | جزیره‌های ذهن</title>
+  <link rel="icon" href="../../favicon.svg">
+  <link rel="stylesheet" href="../../combiners/_assets/combiner-ui.css">
+  <style>
+    body{--accent-h:239;}
+  </style>
+</head>
+<body data-page="workflow">
+  <div class="tp-progress"><div class="tp-progress__bar"></div></div>
+  <header class="co-hero">
+    <div class="co-wrap">
+      <div class="co-topbar">
+        <div>
+          <div class="co-breadcrumbs"><a class="tp-link" href="../../index.html">خانه</a><span>›</span><a class="tp-link" href="../index.html">ترکیب‌گران</a><span>›</span><span>مدل حل مسئله</span></div>
+          <h1 class="co-h1">مدل حل مسئله (Problem-Solving Model)</h1>
+          <p class="co-lead">گام‌به‌گام اجرای مدل + پرامپت‌های آماده</p>
+          <div class="co-ctaRow">
+            <span class="co-chip"><span>🔧</span><span>مدل حل مسئله</span></span><span class="co-chip">⏱️ ۲۰ تا ۶۰ دقیقه (برای تحلیل و رفع مسئله)</span>
+          </div>
+        </div>
+        <div class="co-actions">
+          <button class="tp-iconBtn" data-copy-link title="کپی لینک">🔗</button>
+          <button class="tp-iconBtn" data-theme-toggle title="تم">🌙</button>
+          <button class="tp-iconBtn tp-iconBtn--lang" data-mi-langbtn="1" title="English" aria-label="English">EN</button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="co-wrap" style="padding:1.2rem 1rem 0">
+    <div class="co-grid">
+      <aside class="co-side">
+        <div class="co-card">
+          <div class="co-small" style="margin-bottom:.6rem">ناوبری مدل</div>
+          <nav class="co-nav" data-subnav>
+            <a href="./index.html" data-page="index">نمای کلی<span class="co-badge2">index</span></a><a href="./workflow.html" data-page="workflow">گام‌ها و جریان<span class="co-badge2">workflow</span></a><a href="./examples.html" data-page="examples">سناریوها<span class="co-badge2">examples</span></a><a href="./templates.html" data-page="templates">قالب‌ها<span class="co-badge2">templates</span></a><a href="./faq.html" data-page="faq">اشتباهات و FAQ<span class="co-badge2">faq</span></a><a href="./related.html" data-page="related">مدل‌های مرتبط<span class="co-badge2">related</span></a>
+          </nav>
+          <div style="margin-top:1rem" class="co-small">می‌خوای برگردی داخل اپ؟ <a class="tp-link" href="../../index.html">صفحه اصلی</a></div>
+        </div>
+      </aside>
+      <div class="co-main">
+
+      <div class="co-card">
+        <div class="co-section">
+          <h2>جریان اجرای مدل</h2>
+          <p>اینجا نسخه‌ی «قابل انجام» است: هر گام باید یک خروجی کوتاه تولید کند. اگر خروجی تولید نمی‌کنی، یعنی هنوز داخل حلقه فکر گیر کرده‌ای.</p>
+          <div class="co-kvs">
+            <div class="co-kv"><b>قانون طلایی</b><div class="co-small">هر گام: ۱ سؤال اصلی + ۳ bullet نتیجه.</div></div>
+            <div class="co-kv"><b>زمان‌بندی پیشنهادی</b><div class="co-small">۲۰ تا ۶۰ دقیقه (برای تحلیل و رفع مسئله) (به نسبت اهمیت)</div></div>
+          </div>
+        </div>
+        <div class="co-section">
+          <h2>گام‌ها</h2>
+          <div class="co-steps"><div class="co-step">
+          <div class="co-step__head">
+            <div class="co-step__badge" style="background:#3b82f622;border-color:#3b82f655">🔍</div>
+            <div>
+              <div class="co-step__title">گام 1: تحلیلی</div>
+              <div class="co-small">شفاف‌کردن مسئله، جمع‌آوری داده، تعریف معیار موفقیت و محدودیت‌ها</div>
+            </div>
+          </div>
+          <div class="co-kvs">
+            <div class="co-kv"><b>پرسش‌های کلیدی</b><ul class="co-bullets"><li>مسئله دقیقاً چیست و چه چیز «موفقیت» حساب می‌شود؟</li><li>چه داده/شواهدی داریم و چه چیزهایی فقط حدس هستند؟</li><li>محدودیت‌ها (زمان، بودجه، منابع) چیست؟</li><li>کدام فرض‌ها اگر غلط باشند، نتیجه را می‌شکنند؟</li></ul></div>
+            <div class="co-kv"><b>خروجی ملموس</b><ul class="co-bullets"><li>بیانیه مسئله + معیارهای تصمیم</li><li>فهرست داده‌ها/فرض‌ها/ابهام‌ها</li><li>چک‌لیست محدودیت‌ها</li></ul></div>
+          </div>
+          <div class="co-surface">
+            <b>Prompt آماده</b>
+            <div class="co-template" style="margin-top:.4rem">گام 1 (تحلیلی):
+- مسئله/هدف: ...
+- داده/شواهد: ...
+- فرض‌ها/ابهام‌ها: ...
+- خروجی این گام: ...</div>
+          </div>
+        </div>
+<div class="co-step">
+          <div class="co-step__head">
+            <div class="co-step__badge" style="background:#10b98122;border-color:#10b98155">🔗</div>
+            <div>
+              <div class="co-step__title">گام 2: سیستمی</div>
+              <div class="co-small">دیدن ارتباط‌ها، وابستگی‌ها، اثرات جانبی و حلقه‌های بازخورد در سیستم</div>
+            </div>
+          </div>
+          <div class="co-kvs">
+            <div class="co-kv"><b>پرسش‌های کلیدی</b><ul class="co-bullets"><li>این موضوع به چه چیزهایی وصل است (افراد/فرآیند/فناوری)؟</li><li>اثر کوتاه‌مدت و بلندمدت روی بقیه اجزا چیست؟</li><li>گلوگاه‌ها و نقطه‌های شکست کجاست؟</li><li>اگر این را تغییر دهیم، چه اثر ناخواسته‌ای ایجاد می‌شود؟</li></ul></div>
+            <div class="co-kv"><b>خروجی ملموس</b><ul class="co-bullets"><li>نقشه سیستم/وابستگی‌ها</li><li>اثر دوم و سوم تصمیم</li><li>نقاط گلوگاهی + مانیتورینگ</li></ul></div>
+          </div>
+          <div class="co-surface">
+            <b>Prompt آماده</b>
+            <div class="co-template" style="margin-top:.4rem">گام 2 (سیستمی):
+- مسئله/هدف: ...
+- داده/شواهد: ...
+- فرض‌ها/ابهام‌ها: ...
+- خروجی این گام: ...</div>
+          </div>
+        </div>
+<div class="co-step">
+          <div class="co-step__head">
+            <div class="co-step__badge" style="background:#f59e0b22;border-color:#f59e0b55">⚖️</div>
+            <div>
+              <div class="co-step__title">گام 3: انتقادی</div>
+              <div class="co-small">به چالش کشیدن فرض‌ها، پیدا کردن ریسک‌ها، سناریوهای شکست و نقاط کور</div>
+            </div>
+          </div>
+          <div class="co-kvs">
+            <div class="co-kv"><b>پرسش‌های کلیدی</b><ul class="co-bullets"><li>بهترین نقد این راه‌حل چیست؟</li><li>اگر اشتباه باشد، کجا و چگونه شکست می‌خورد؟</li><li>چه سوگیری‌هایی ممکن است در تصمیم دخیل باشد؟</li><li>چه تستی سریع می‌تواند فرض اصلی را رد/تأیید کند؟</li></ul></div>
+            <div class="co-kv"><b>خروجی ملموس</b><ul class="co-bullets"><li>لیست ریسک‌ها + راه‌کار کاهش ریسک</li><li>فرض‌های بحرانی + تست برای هرکدام</li><li>چک‌لیست «چه چیزی را نمی‌بینیم؟»</li></ul></div>
+          </div>
+          <div class="co-surface">
+            <b>Prompt آماده</b>
+            <div class="co-template" style="margin-top:.4rem">گام 3 (انتقادی):
+- مسئله/هدف: ...
+- داده/شواهد: ...
+- فرض‌ها/ابهام‌ها: ...
+- خروجی این گام: ...</div>
+          </div>
+        </div></div>
+        </div>
+        <div class="co-section">
+          <h2>جمع‌بندی و تصمیم</h2>
+          <div class="co-surface">
+            <div class="co-template">تصمیم/راهکار نهایی:
+چرا این گزینه؟ (۳ دلیل):
+1)
+2)
+3)
+ریسک اصلی + کاهش ریسک:
+قدم بعدی (تا 24 ساعت):
+معیار بازنگری (تاریخ/شرط):</div>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+    </div>
+  </main>
+  <footer class="co-footer">
+    <div>© جزیره‌های ذهن. نسخه لوکال.</div>
+    <div class="co-small">این صفحه‌ها برای مطالعه و استفاده عملی طراحی شده‌اند.</div>
+  </footer>
+  <script src="../../combiners/_assets/combiner-page.js"></script>
+  <script src="../combiner-enhance.js" defer></script>
+</body>
+</html>
